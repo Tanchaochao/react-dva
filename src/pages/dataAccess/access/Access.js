@@ -7,48 +7,63 @@ import {
   Col,
   Select,
   Icon,
+  Button,
 } from 'antd';
 import config from '../../../config/common';
+import EditModal from './components/EditModal';
 import styles from './Access.m.scss';
 
 const { Option } = Select;
 
-const columns = [
-  {
-    title: 'id',
-    dataIndex: 'id',
-  },
-  {
-    title: '任务名称',
-    dataIndex: 'name',
-  },
-  {
-    title: '创建时间',
-    dataIndex: 'createDate',
-    render(text) {
-      return text.replace(/-/g, '/');
-    },
-  },
-  {
-    title: '警告数量',
-    dataIndex: 'warningCount',
-  },
-  {
-    title: '状态',
-    dataIndex: 'status',
-  },
-];
-
 class Access extends PureComponent {
-  state = {
-    current: 1,
-    pageSize: config.pageSize,
-    searchText: '',
-    filters: {
-      name: '',
-      status: '',
-    },
+  constructor(props) {
+    super(props);
+    this.columns = [
+      {
+        title: 'id',
+        dataIndex: 'id',
+      },
+      {
+        title: '任务名称',
+        dataIndex: 'name',
+      },
+      {
+        title: '创建时间',
+        dataIndex: 'createDate',
+        render(text) {
+          return text.replace(/-/g, '/');
+        },
+      },
+      {
+        title: '警告数量',
+        dataIndex: 'warningCount',
+      },
+      {
+        title: '状态',
+        dataIndex: 'status',
+      },
+      {
+        title: '操作',
+        render: (_, record) => {
+          return (
+            <EditModal id={record.id}>
+              <Button>编辑</Button>
+            </EditModal>
+          );
+        },
+      },
+    ];
+    this.state = {
+      current: 1,
+      pageSize: config.pageSize,
+      searchText: '',
+      filters: {
+        name: '',
+        status: '',
+      },
+    };
   }
+
 
   handleChange = (pagination) => {
     this.setState({
@@ -125,7 +140,7 @@ class Access extends PureComponent {
         <Table
           rowKey="id"
           dataSource={access.list}
-          columns={columns}
+          columns={this.columns}
           pagination={{ current, pageSize, total: access.total }}
           onChange={this.handleChange}
         />
