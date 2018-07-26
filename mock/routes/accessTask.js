@@ -10,7 +10,7 @@ const accessData = mockjs.mock({
       name: /testlw[0-10]{5}/,
       createDate: mockjs.Random.date(),
       'warningCount|0-100': 5,
-      status: /[运行中|已停止]/,
+      status: /(运行中|已停止)/,
     },
   ],
 });
@@ -22,8 +22,8 @@ router.get('/', (ctx) => {
   ctx.body = {
     code: 0,
     data: {
-      total: list.length,
-      list: handleList(list, query),
+      total: handleList(list, query)[1],
+      list: handleList(list, query)[0],
     },
   };
 });
