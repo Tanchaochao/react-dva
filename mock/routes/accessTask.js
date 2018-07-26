@@ -19,7 +19,13 @@ const { list } = accessData;
 
 router.get('/', (ctx) => {
   const { query } = ctx;
-  ctx.body = handleList(list, query);
+  ctx.body = {
+    code: 0,
+    data: {
+      total: list.length,
+      list: handleList(list, query),
+    },
+  };
 });
 router.post('/', (ctx) => {
   ctx.body = 'this a users response!';

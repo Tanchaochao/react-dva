@@ -1,7 +1,4 @@
-const API = 'http://192.168.0.138:7001';
-// const API = 'http://118.24.101.45:7001';
+const API = 'http://127.0.0.1:9999/api';
 export default {
-  fetchUserInfo: `${API}/login`,
-  createAccount: `${API}/createAccount`,
-  fetchChainInfo: `${API}/chainInfo`,
+  getAccessTasks: `${API}/accessTasks`,
 };
