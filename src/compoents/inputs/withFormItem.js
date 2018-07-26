@@ -16,7 +16,6 @@ export default InputComponent => (props) => {
   const touched = form.touched[field.name];
   return (
     <Row
-      {...other}
       gutter={20}
       className={classnames(classNameProp, 'form-item', {
         'has-error': !!error && touched,
@@ -26,7 +25,7 @@ export default InputComponent => (props) => {
         <label className="form-item-label">{label}:</label>
       </Col>
       <Col span={16}>
-        <InputComponent id={field.name} {...field} />
+        <InputComponent id={field.name} {...field} {...other} />
       </Col>
       {!!error && touched && (
         <Col span={16} offset={8}>

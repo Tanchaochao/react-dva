@@ -1,0 +1,16 @@
+.form{
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 20px;
+}
+
+.form :global(.ant-input){
+  width: auto;
+}
+.btn-wrapper{
+  text-align: center;
+}
+.error{
+  text-align: center;
+  color: #f5222d;
+}

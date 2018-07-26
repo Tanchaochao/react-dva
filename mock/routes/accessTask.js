@@ -30,8 +30,13 @@ router.get('/', (ctx) => {
 router.post('/', (ctx) => {
   ctx.body = 'this a users response!';
 });
-router.get('/{id}', (ctx) => {
-  ctx.body = 'this a users response!';
+router.get('/:id', (ctx) => {
+  const { id } = ctx.params;
+  ctx.body = {
+    code: 0,
+    // eslint-disable-next-line eqeqeq
+    data: list.filter(item => item.id == id)[0],
+  };
 });
 
 

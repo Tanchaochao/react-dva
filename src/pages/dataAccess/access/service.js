@@ -7,3 +7,9 @@ export const getAccessTasks = (params) => {
     params,
   });
 };
+
+export const getAccessTask = (id) => {
+  return request({
+    url: `${api.getAccessTask}/${id}`,
+  });
+};

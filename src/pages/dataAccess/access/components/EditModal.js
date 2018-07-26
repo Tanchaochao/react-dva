@@ -1,13 +1,20 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'dva';
 import { Modal } from 'antd';
 import RefHolder from '../../../../compoents/RefHolder';
+import Form from './Form';
 
-export default class extends PureComponent {
+class EditModal extends PureComponent {
   state = {
     visible: false,
   }
 
   handleOpen = () => {
+    const { dispatch, id } = this.props;
+    dispatch({
+      type: 'access/fetchItem',
+      payload: id,
+    });
     this.setState({
       visible: true,
     });
@@ -19,10 +26,18 @@ export default class extends PureComponent {
     });
   }
 
+  handleSubmit = (values, actions) => {
+    console.log(values);
+    actions.setSubmitting(false);
+  }
+
   render() {
     const {
       children,
       id,
+      item,
+      fetchLoading,
+      dispatch,
       ...other
     } = this.props;
     const { visible } = this.state;
@@ -38,12 +53,22 @@ export default class extends PureComponent {
         })}
         <Modal
           title="编辑"
+          footer={null}
           visible={visible}
           onCancel={this.handleClose}
+          destroyOnClose
         >
-          编辑
+          <Form onSubmit={this.handleSubmit} item={item} loading={fetchLoading} />
         </Modal>
       </RefHolder>
     );
   }
 }
+
+export default connect(({ access, loading }) => {
+  const { item } = access;
+  return {
+    item,
+    fetchLoading: loading.effects['access/fetchItem'],
+  };
+})(EditModal);
