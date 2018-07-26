@@ -19,6 +19,7 @@
     "react/no-children-prop": "off",
     "react/jsx-no-bind": "off",
     "no-throw-literal": "off",
+    "no-underscore-dangle": "off",
     "react/sort-comp": ["error", {
       "order": [
         "static-methods",

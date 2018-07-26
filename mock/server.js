@@ -2,12 +2,12 @@ const Koa = require('koa');
 const cors = require('koa2-cors');
 const Router = require('koa-router');
 const logger = require('koa-logger');
-const access = require('./routes/access');
+const accessTask = require('./routes/accessTask');
 
 const app = new Koa();
 const router = Router({ prefix: '/api' });
 
-router.use('/access', access.routes(), access.allowedMethods());
+router.use('/accessTasks', accessTask.routes(), accessTask.allowedMethods());
 
 app
   .use(cors())
