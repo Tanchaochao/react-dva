@@ -70,7 +70,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "mr": "node ./bin/createMR.js"
+    "mr": "node ./bin/createMR.js",
+    "mock": "node ./mock/server.js"
   },
   "jest": {
     "collectCoverageFrom": [
