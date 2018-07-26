@@ -1,0 +1,10 @@
+.form-item{
+  margin: 10px 0;
+}
+.form-item-label{
+  display: block;
+  text-align: right;
+}
+.form-item .ant-form-explain{
+  text-align: left;
+}
