@@ -13,7 +13,7 @@ function dynamicWrapper(app, feature, hasModel = true) {
         ? [import(`../pages/${feature}/model.js`)]
         : [];
     },
-    component: () => import(`../pages/${feature}/${capitalize(feature)}`),
+    component: () => import(`../pages/${feature}/${capitalize(feature.split('/').pop())}`),
   });
 }
 
@@ -23,6 +23,11 @@ export default function getRouterConfig(app) {
       path: '/',
       exact: true,
       component: dynamicWrapper(app, 'home', false),
+    },
+    {
+      path: '/dataAccess/access',
+      exact: true,
+      component: dynamicWrapper(app, 'dataAccess/access'),
     },
   ];
   return routers;
