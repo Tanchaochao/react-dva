@@ -15,7 +15,7 @@ const accessData = mockjs.mock({
   ],
 });
 
-const { list } = accessData;
+let { list } = accessData;
 
 router.get('/', (ctx) => {
   const { query } = ctx;
@@ -27,8 +27,14 @@ router.get('/', (ctx) => {
     },
   };
 });
-router.post('/', (ctx) => {
-  ctx.body = 'this a users response!';
+router.put('/:id', (ctx) => {
+  const { id } = ctx.params;
+  // eslint-disable-next-line eqeqeq
+  const index = list.findIndex(item => item.id == id);
+  list = [...list.slice(0, index), ctx.body, ...list.slice(index + 1)]; 
+  ctx.body = {
+    code: 1,
+  };
 });
 router.get('/:id', (ctx) => {
   const { id } = ctx.params;
