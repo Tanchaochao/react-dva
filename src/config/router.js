@@ -29,6 +29,11 @@ export default function getRouterConfig(app) {
       exact: true,
       component: dynamicWrapper(app, 'dataAccess/access'),
     },
+    {
+      path: '/dataAccess/access02',
+      exact: true,
+      component: dynamicWrapper(app, 'dataAccess/access02'),
+    },
   ];
   return routers;
 }

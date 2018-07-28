@@ -31,9 +31,9 @@ router.put('/:id', (ctx) => {
   const { id } = ctx.params;
   // eslint-disable-next-line eqeqeq
   const index = list.findIndex(item => item.id == id);
-  list = [...list.slice(0, index), ctx.body, ...list.slice(index + 1)]; 
+  list = [...list.slice(0, index), ctx.body, ...list.slice(index + 1)];
   ctx.body = {
-    code: 1,
+    code: 0,
   };
 });
 router.get('/:id', (ctx) => {
