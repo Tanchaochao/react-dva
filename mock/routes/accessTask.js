@@ -29,9 +29,17 @@ router.get('/', (ctx) => {
 });
 router.put('/:id', (ctx) => {
   const { id } = ctx.params;
+  const task = ctx.request.body;
+  if (list.filter(item => item.name === task.name).length !== 0) {
+    ctx.body = {
+      code: 1,
+      msg: '任务名冲突',
+    };
+    return;
+  }
   // eslint-disable-next-line eqeqeq
   const index = list.findIndex(item => item.id == id);
-  list = [...list.slice(0, index), ctx.body, ...list.slice(index + 1)];
+  list = [...list.slice(0, index), task, ...list.slice(index + 1)];
   ctx.body = {
     code: 0,
   };

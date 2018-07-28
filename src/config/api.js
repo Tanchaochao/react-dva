@@ -1,4 +1,4 @@
-const API = 'http://127.0.0.1:9999/api';
+const API = 'http://192.168.92.143:9999/api';
 export default {
   getAccessTasks: `${API}/accessTasks`,
   getAccessTask: `${API}/accessTasks`,

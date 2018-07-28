@@ -40,6 +40,7 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "koa": "^2.5.2",
+    "koa-body": "^4.0.4",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "koa2-cors": "^2.0.6",

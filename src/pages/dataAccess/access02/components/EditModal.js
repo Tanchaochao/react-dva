@@ -26,6 +26,7 @@ class EditModal extends PureComponent {
   handleClose = () => {
     this.setState({
       visible: false,
+      error: null,
     });
   }
 
