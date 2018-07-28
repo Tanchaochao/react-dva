@@ -10,6 +10,7 @@ import {
   Button,
 } from 'antd';
 import EditModal from './components/EditModal';
+import AddModal from './components/AddModal';
 import styles from './Access02.m.scss';
 
 const { Option } = Select;
@@ -30,7 +31,7 @@ class Access02 extends PureComponent {
         title: '创建时间',
         dataIndex: 'createDate',
         render(text) {
-          return text.replace(/-/g, '/');
+          return text && text.replace(/-/g, '/');
         },
       },
       {
@@ -96,6 +97,11 @@ class Access02 extends PureComponent {
         <Row>
           <Col span={8}><span>状态</span><Select onChange={this.handleFitlerChange.bind(null, 'status')} value={listState.filters.status} className={styles.select}><Option value="运行中">运行中</Option><Option value="已停止">已停止</Option></Select></Col>
           <Col span={8}><span>任务名称</span><Input onChange={this.handleSearchChange} value={searchText} className={styles.input} suffix={<Icon type="search" onClick={this.handleSearch} />} /></Col>
+          <Col span={3} offset={5}>
+            <AddModal>
+              <Button>新增</Button>
+            </AddModal>
+          </Col>
         </Row>
         <Table
           rowKey="id"

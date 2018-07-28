@@ -21,3 +21,11 @@ export const eidtAccessTask = (id, item) => {
     data: item,
   });
 };
+
+export const addAccessTask = (item) => {
+  return request({
+    method: 'post',
+    url: api.addAccessTask,
+    data: item,
+  });
+};

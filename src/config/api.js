@@ -3,4 +3,5 @@ export default {
   getAccessTasks: `${API}/accessTasks`,
   getAccessTask: `${API}/accessTasks`,
   editAccessTask: `${API}/accessTasks`,
+  addAccessTask: `${API}/accessTasks`,
 };

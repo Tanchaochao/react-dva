@@ -53,5 +53,23 @@ router.get('/:id', (ctx) => {
   };
 });
 
+router.post('/', (ctx) => {
+  const task = ctx.request.body;
+  if (list.filter(item => item.name === task.name).length !== 0) {
+    ctx.body = {
+      code: 1,
+      msg: '任务名冲突',
+    };
+    return;
+  }
+  const lastId = list.slice(-1)[0].id;
+  task.id = lastId + 1;
+  list.push(task);
+  ctx.body = {
+    code: 0,
+    data: task,
+  };
+});
+
 
 module.exports = router;

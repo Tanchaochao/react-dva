@@ -24,7 +24,7 @@ const Form = (props) => {
   } = props;
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <Spin spinning={isSubmitting || loading}>
+      <Spin spinning={loading || isSubmitting}>
         <div className={styles.error}>{errorMessage}</div>
         <Field label="任务名" name="name" component={InputFormItem} validate={chain(required('请输入任务名'))} />
         <Field label="状态" name="status" component={SelectFormItem} validate={chain(required('请输入任务名'))}>
