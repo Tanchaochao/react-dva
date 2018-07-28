@@ -76,7 +76,12 @@ class EditModal extends PureComponent {
           onCancel={this.handleClose}
           destroyOnClose
         >
-          <Form onSubmit={this.handleSubmit} error={error} item={item} loading={fetchLoading} />
+          <Form
+            onSubmit={this.handleSubmit}
+            errorMessage={error}
+            item={item}
+            loading={fetchLoading}
+          />
         </Modal>
       </RefHolder>
     );
