@@ -227,7 +227,7 @@ module.exports = {
                       hmr: false,
                     },
                   },
-                  use: loadersConfig.propScssForModule,
+                  use: loadersConfig.prodScssForModule,
                 },
                 extractTextPluginOptions,
               ),
@@ -244,7 +244,7 @@ module.exports = {
                       hmr: false,
                     },
                   },
-                  use: loadersConfig.propScss,
+                  use: loadersConfig.prodScss,
                 },
                 extractTextPluginOptions,
               ),
@@ -316,7 +316,7 @@ module.exports = {
       },
       output: {
         comments: false,
-        // Turned on because emoji and regex is not minified properly using default
+        // Turned on because emoji and regex is not minified proderly using default
         // https://github.com/facebookincubator/create-react-app/issues/2488
         ascii_only: true,
       },

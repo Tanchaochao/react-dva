@@ -87,6 +87,7 @@ const prodCssLoaderForModule = {
   options: {
     importLoaders: 1,
     minimize: true,
+    modules: true,
     sourceMap: shouldUseSourceMap,
     localIdentName: '[local]_[hash:base64:5]',
   },
@@ -128,5 +129,5 @@ module.exports = {
   prodScss,
   prodLess,
   prodCssForModule,
-  prodScssForModule
+  prodScssForModule,
 };
