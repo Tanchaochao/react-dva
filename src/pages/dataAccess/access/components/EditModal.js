@@ -27,6 +27,7 @@ class EditModal extends PureComponent {
   }
 
   handleSubmit = (values, actions) => {
+    // eslint-disable-next-line no-console
     console.log(values);
     actions.setSubmitting(false);
   }
