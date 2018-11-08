@@ -34,6 +34,11 @@ export default function getRouterConfig(app) {
       exact: true,
       component: dynamicWrapper(app, 'dataAccess/access02'),
     },
+    {
+      path: '/treeTable',
+      exact: true,
+      component: dynamicWrapper(app, 'treeTable'),
+    },
   ];
   return routers;
 }

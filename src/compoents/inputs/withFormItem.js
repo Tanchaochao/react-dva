@@ -14,6 +14,7 @@ export default InputComponent => (props) => {
 
   const error = form.errors[field.name];
   const touched = form.touched[field.name];
+  console.log(form, field);
   return (
     <Row
       gutter={20}
