@@ -1,0 +1,55 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/no-array-index-key": "off",
+    "react/no-find-dom-node": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-return-assign": "off",
+    "operator-linebreak": "off",
+    "no-console": "error",
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off",
+    "react/prop-types": "off",
+    "global-require": "off",
+    "no-use-before-define": "off",
+    "consistent-return": "off",
+    "react/prefer-stateless-function": "off",
+    "jsx-a11y/label-has-for": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "import/prefer-default-export": "off",
+    "react/destructuring-assignment": "off",
+    "arrow-body-style": "off",
+    "no-plusplus": "off",
+    "react/require-default-props": "off",
+    "react/no-children-prop": "off",
+    "react/jsx-no-bind": "off",
+    "no-throw-literal": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/sort-comp": ["error", {
+      "order": [
+        "static-methods",
+        "instance-variables",
+        "lifecycle",
+        "/^handle.+$/",
+        "getters",
+        "setters",
+        "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+        "instance-methods",
+        "everything-else",
+        "rendering"
+      ]
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack.config.resolver.js"
+      }
+    }
+  }
+}
