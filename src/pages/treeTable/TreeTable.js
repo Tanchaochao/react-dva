@@ -107,6 +107,7 @@ class TreeTable extends Component {
     });
     return (
       <div>
+        <Button>增加</Button>
         <Table
           dataSource={data}
           columns={columns}

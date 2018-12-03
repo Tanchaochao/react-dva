@@ -20,6 +20,10 @@ const data = [
             category: 'cc',
             categroyId: 3,
           },
+          {
+            id: 'add',
+            categroyId: 3,
+          },
         ],
       },
     ],
@@ -42,7 +46,7 @@ export default {
   namespace: 'treeTable',
   state: {
     data: addPath(data),
-    editingKey: null,
+    editingKey: 'add',
   },
   reducers: {
     save: (state, { payload }) => {
