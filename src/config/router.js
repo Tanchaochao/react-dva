@@ -31,6 +31,11 @@ export default function getRouterConfig(app) {
       exact: true,
       component: dynamicWrapper(app, 'passiveSop/list', false),
     },
+    {
+      path: '/rule/passiveSop/add',
+      exact: true,
+      component: dynamicWrapper(app, 'passiveSop/add'),
+    },
   ];
   return routers;
 }
