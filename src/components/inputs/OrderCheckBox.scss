@@ -1,0 +1,15 @@
+
+.orderSelect__control.hidden{
+  display: none;
+}
+.orderSelect__label{
+  margin-left: 5px;
+}
+.orderSelect{
+  display: flex;
+  flex-wrap: wrap;
+}
+.orderSelect__item{
+  display: block;
+  width: 50%;
+}

@@ -1,0 +1,32 @@
+.commonFieldArray__item{
+  display: flex;
+  margin: 10px 0;
+}
+.commonFieldArray__label{
+  width: 70px;
+  line-height: 39px;
+}
+.commonFieldArray__field{
+  width: auto;
+  flex-grow: 1;
+  margin: 0 5px;
+}
+.commonFieldArray__del{
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+}
+.commonFieldArray__del > i{
+  font-weight: 900;
+  color: #111;
+  transition: all .3s ease-in;
+}
+.commonFieldArray__add{
+  margin-left: 75px;
+}
+.commonFieldArray__error{
+  color: red;
+  padding: 0 10px;
+}
