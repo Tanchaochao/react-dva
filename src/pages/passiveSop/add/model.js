@@ -4,13 +4,18 @@ import { delay } from 'dva/saga';
 export default {
   namespace: 'passiveSopAdd',
   state: {
-    current: 0,
+    current: 1,
     stepLength: 3,
     sopName: {
       value: '',
       errorMessage: null,
     },
-    sopParams: {},
+    sopParams: {
+      value: [
+        { cname: '', ename: '' },
+      ],
+      errorMessage: null,
+    },
     sopTables: {},
   },
   reducers: {
@@ -52,6 +57,29 @@ export default {
       // yield put({
       //   type: 'saveByPath',
       //   meta: 'sopName',
+      //   payload: {
+      //     errorMessage: '出错',
+      //   },
+      // });
+    },
+    * saveSopParams({ payload: params }, { put, select }) {
+      const current = yield select(rootState => rootState.passiveSopAdd.current);
+      // 正确
+      yield put({
+        type: 'saveByPath',
+        meta: 'sopParams',
+        payload: {
+          value: params,
+        },
+      });
+      yield put({
+        type: 'changeStep',
+        payload: current + 1,
+      });
+      // 错误
+      // yield put({
+      //   type: 'saveByPath',
+      //   meta: 'sopParams',
       //   payload: {
       //     errorMessage: '出错',
       //   },

@@ -36,7 +36,6 @@ export default (props) => {
     >
       {children}
       <div>
-        1111
         {current > 0 && <Button onClick={onPrev}>上一步</Button>}
         {current < stepLength - 1 && <Button onClick={onNext}>下一步</Button>}
         {current === stepLength - 1 && <Button onClick={onDone}>完成</Button>}
